@@ -1,4 +1,5 @@
-from flask import render_template, Flask
+from flask import render_template, Flask, url_for
+
 app = Flask(__name__)
 
 @app.route('/<title>')
@@ -9,6 +10,8 @@ def index(title):
 @app.route('/training/<prof>')
 def training(prof):
     return render_template('profs.html', prof=prof)
+
+
 
 @app.route('/list_prof/<param>')
 def list_prof(param):
